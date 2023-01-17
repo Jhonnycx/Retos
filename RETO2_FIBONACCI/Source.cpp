@@ -15,18 +15,20 @@ Reto #2
 # include <iostream>
 using namespace std;
 int main() {
-	int i = 0, fibonacci[51] = { 0 };
+	int i = 0; float fibonacci[51] = { 0 };
 
 	for (i = 0; i <= 50; i++) {
 		fibonacci[i] = i;
 	}
+	
 	for (i = 0; i <= 50; i++) {
 		if (i > 1) {
 			fibonacci[i] = (fibonacci[i - 1] + fibonacci[i - 2]);
-			printf("%i - %i\n", i, fibonacci[i]);
+			printf("%i - %.0f\n", i, fibonacci[i]);
 		}
 		else if (i <= 1)
-			printf("%i - %i\n", i, fibonacci[i]);
+			printf("%i - %.0f\n", i, fibonacci[i]);
 	}
-	system("pause");
+	
+
 }
