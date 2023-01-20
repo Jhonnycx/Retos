@@ -1,12 +1,14 @@
 /*
- * Reto #3
- * ¿ES UN NÚMERO PRIMO?
- * Fecha publicación enunciado: 17/01/22
- * Fecha publicación resolución: 24/01/22
- * Dificultad: MEDIOS
+Reto #2
+ * LA SUCESIÓN DE FIBONACCI
+ * Fecha publicación enunciado: 10/01/22
+ * Fecha publicación resolución: 17/01/22
+ * Dificultad: DIFÍCIL
  *
- * Enunciado: Escribe un programa que se encargue de comprobar si un número es o no primo.
- * Hecho esto, imprime los números primos entre 1 y 100.
+ * Enunciado: Escribe un programa que imprima los 50 primeros números de la sucesión de Fibonacci empezando en 0.
+ * La serie Fibonacci se compone por una sucesión de números en la que el siguiente siempre es la suma de los dos anteriores.
+ * 0, 1, 1, 2, 3, 5, 8, 13...
+ 
  */
 
 # include <stdio.h>
@@ -15,31 +17,18 @@
 # include <iostream>
 using namespace std;
 int main() {
-	int i = 0, j = 0; int nprimos[101] = { 0 }, nnprimos[101] = { 0 };
-	int cont = 0;
-	for (i = 1; i <= 100; i++) {
-		nprimos[i] = i;
-		nnprimos[i] = i;
+	int i = 0; float fibonacci[51] = { 0 };
+
+	for (i = 0; i <= 50; i++) {
+		fibonacci[i] = float(i);
 	}
-
-	for (i = 1; i <= 100; i++) {
-			for (j = 1; j <= int(nprimos[i]); j++) {
-				if (nprimos[i] % nnprimos[j] == 0) {
-					cont++;
-					//printf("%i / %i\n", nprimos[i], nnprimos[j]);
-					//printf("contador: %i\n",cont);
-					//system("pause");
-				}
-
-			}
-		
-		
-		
-			if (cont == 2) {
-				printf("%i\n", nprimos[i]);
-				
-			}
-			cont = 0;
+	for (i = 0; i <= 50; i++) {
+		if (i > 1) {
+			fibonacci[i] = (fibonacci[i - 1] + fibonacci[i - 2]);
+			printf("%i - %.0f\n",i, fibonacci[i]);
+		}
+		else if (i <= 1)
+			printf("%i - %.0f\n",i, fibonacci[i]);
 	}
 	system("pause");
 	return 0;
